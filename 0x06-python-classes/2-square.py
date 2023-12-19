@@ -3,7 +3,7 @@
 """ Sqaure class"""
 
 
-class Sqaure:
+class Square:
     """Sqaure Class"""
     def __init__(self, size=0) -> None:
         """Initilize the data
