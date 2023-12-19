@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import math
 
 """Magic Class"""
 
+import math
 
 class MagicClass:
     """Magic Class"""
@@ -18,9 +18,9 @@ class MagicClass:
         self.__radius = radius
 
     def area(self):
-        """Area of a circle"""
+        """Area of a magic class"""
         return self.__radius ** 2 * math.pi
 
     def circumference(self):
-        """Circumference of a circle"""
+        """Circumference of a magic class"""
         return 2 * math.pi * self.__radius
