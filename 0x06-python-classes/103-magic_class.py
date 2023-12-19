@@ -2,7 +2,9 @@
 
 """Magic Class"""
 
+
 import math
+
 
 class MagicClass:
     """Magic Class"""
