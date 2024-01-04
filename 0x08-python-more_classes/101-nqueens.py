@@ -25,13 +25,13 @@ class Backtrack:
         else:
             for col in range(self.n):
                 if self.is_safe(row, col, state):
-                    state[row] = col
+                    state[row] = [row, col]
                     self.place_queen(row + 1, state)
 
     def is_safe(self, row, col, state):
         """ Backtracking class for nqueens """
         for r in range(row):
-            if state[r] == col or abs(state[r] - col) == row - r:
+            if state[r][1] == col or abs(state[r][1] - col) == row - r:
                 return False
         return True
 
