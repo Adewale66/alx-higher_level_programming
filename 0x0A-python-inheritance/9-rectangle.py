@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-geo_class = __import__('7-base_geometry').BaseGeometry
-
 """Rectangle class module"""
+
+
+geo_class = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(geo_class):
