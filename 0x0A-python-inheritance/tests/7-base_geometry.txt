@@ -1,11 +1,15 @@
 class BaseGeometry:
 >>> geo_class = __import__('7-base_geometry').BaseGeometry
 >>> bg = geo_class()
->>> bg.integer_validator("negative_test", -1)
+>>> bg.integer_validator("distance", -1)
 Traceback (most recent call last):
 ...
-ValueError: negative_test must be greater than 0
->>> bg.integer_validator("type_error", "heelo")
+ValueError: distance must be greater than 0
+>>> bg.integer_validator("name", "john")
 Traceback (most recent call last):
 ...
-TypeError: type_error must be an integer
+TypeError: name must be an integer
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
