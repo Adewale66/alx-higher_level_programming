@@ -35,4 +35,4 @@ if __name__ == "__main__":
         print_metrics(status_codes, file_size)
     except KeyboardInterrupt:
         print_metrics(status_codes, file_size)
-        raise KeyboardInterrupt
+        raise
