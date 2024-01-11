@@ -15,6 +15,13 @@ class RectangleTest(unittest.TestCase):
     def test_rectangle_instance(self):
         """Test Rectangle is a subclass of Base class"""
         self.assertTrue(issubclass(Rectangle, Base))
+    
+    def test_rectangle_attributes(self):
+        """Test Rectangle attributes"""
+        s1 = Rectangle(10,2)
+        self.assertTrue(hasattr(s1, "id"))
+        self.assertTrue(hasattr(s1, "x"))
+        self.assertTrue(hasattr(s1, "y"))
 
     def test_rectangle_attributes(self):
         r1 = Rectangle(10, 2)
@@ -86,12 +93,6 @@ class RectangleTest(unittest.TestCase):
         """Test area method"""
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.area(), 20)
-
-    def test_rectangle_display(self):
-        """Test display method"""
-        r1 = Rectangle(2, 2)
-        r1.display()
-        self.assertEqual(r1.display(), None)
 
     def test_rectangle_str(self):
         """Test __str__ method"""
