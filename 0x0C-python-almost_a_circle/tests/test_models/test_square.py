@@ -27,3 +27,40 @@ class SquareTest(unittest.TestCase):
         self.assertTrue(hasattr(s1, "size"))
         self.assertTrue(hasattr(s1, "x"))
         self.assertTrue(hasattr(s1, "y"))
+
+    def test_str_method(self):
+        """Test __str__ method"""
+        s1 = Square(1, 2, 3, 4)
+        self.assertEqual(s1.__str__(), "[Square] (4) 2/3 - 1")
+
+    def test_size(self):
+        """Test size setter and getter"""
+        s1 = Square(1)
+        s1.size = 2
+        self.assertEqual(s1.size, 2)
+        with self.assertRaises(TypeError):
+            s1.size = "2"
+        with self.assertRaises(ValueError):
+            s1.size = -10
+
+    def test_update(self):
+        """Test update method"""
+        s1 = Square(1, 2, 3, 4)
+        s1.update(10, 20, 30, 40)
+        self.assertEqual(s1.__str__(), "[Square] (10) 30/40 - 20")
+        s1.update(1, 2, 3, 4, 5, 6, 7, 8)
+        self.assertEqual(s1.__str__(), "[Square] (1) 3/4 - 2")
+        s1.update(id=10, size=20, x=30, y=40)
+        self.assertEqual(s1.__str__(), "[Square] (10) 30/40 - 20")
+
+    def test_to_dictionary(self):
+        """Test to_dictionary method"""
+        s1 = Square(1, 2, 3, 4)
+        s1_dictionary = s1.to_dictionary()
+        self.assertEqual(s1_dictionary, {'x': 2, 'y': 3, 'id': 4, 'size': 1})
+        self.assertTrue(type(s1_dictionary) is dict)
+        s2 = Square(1, 1)
+        s2.update(**s1_dictionary)
+        self.assertEqual(s1.__str__(), s2.__str__())
+        self.assertNotEqual(s1, s2)
+        self.assertFalse(s1 is s2)

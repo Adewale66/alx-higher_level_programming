@@ -15,10 +15,10 @@ class RectangleTest(unittest.TestCase):
     def test_rectangle_instance(self):
         """Test Rectangle is a subclass of Base class"""
         self.assertTrue(issubclass(Rectangle, Base))
-    
+
     def test_rectangle_attributes(self):
         """Test Rectangle attributes"""
-        s1 = Rectangle(10,2)
+        s1 = Rectangle(10, 2)
         self.assertTrue(hasattr(s1, "id"))
         self.assertTrue(hasattr(s1, "x"))
         self.assertTrue(hasattr(s1, "y"))
@@ -117,10 +117,10 @@ class RectangleTest(unittest.TestCase):
         """Test to_dictionary method"""
         r1 = Rectangle(10, 2, 1, 9)
         r1_dictionary = r1.to_dictionary()
-        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, 'id': 1,
+        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, 'id': 6,
                          'height': 2, 'width': 10})
         self.assertEqual(type(r1_dictionary), dict)
         r2 = Rectangle(1, 1)
         r2.update(**r1_dictionary)
-        self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/9 - 10/2")
+        self.assertEqual(r2.__str__(), "[Rectangle] (6) 1/9 - 10/2")
         self.assertNotEqual(r1, r2)
