@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 
+"""Test cases for rectangle module"""
+
+
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 
 
 class RectangleTest(unittest.TestCase):
+    """ Test cases for rectangle module"""
 
     def test_doc(self):
         """Test documentation"""
@@ -119,10 +123,14 @@ class RectangleTest(unittest.TestCase):
         """Test to_dictionary method"""
         r1 = Rectangle(10, 2, 1, 9)
         r1_dictionary = r1.to_dictionary()
-        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, 'id': 4,
+        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, 'id': 6,
                          'height': 2, 'width': 10})
         self.assertEqual(type(r1_dictionary), dict)
         r2 = Rectangle(1, 1)
         r2.update(**r1_dictionary)
-        self.assertEqual(r2.__str__(), "[Rectangle] (4) 1/9 - 10/2")
+        self.assertEqual(r2.__str__(), "[Rectangle] (6) 1/9 - 10/2")
         self.assertNotEqual(r1, r2)
+
+
+if __name__ == "__main__":
+    unittest.main()

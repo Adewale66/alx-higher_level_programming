@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Test cases for square module"""""
+
 
 import unittest
 from models.rectangle import Rectangle
@@ -6,6 +8,7 @@ from models.square import Square
 
 
 class SquareTest(unittest.TestCase):
+    """ Test cases for square module"""
 
     def test_doc(self):
         """Test documentation"""
@@ -69,3 +72,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(s1.__str__(), s2.__str__())
         self.assertNotEqual(s1, s2)
         self.assertFalse(s1 is s2)
+
+
+if __name__ == "__main__":
+    unittest.main()

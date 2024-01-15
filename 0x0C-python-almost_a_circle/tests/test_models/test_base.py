@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+""" Test cases for base module"""
+
 
 import unittest
 from models.base import Base
 
 
 class BaseTest(unittest.TestCase):
+    """ Test cases for base module"""
 
     def test_doc(self):
         """Test documentation"""
@@ -47,3 +50,7 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(Base.from_json_string('[{"x": 1}]'), [{'x': 1}])
         with self.assertRaises(TypeError):
             Base.from_json_string()
+
+
+if __name__ == "__main__":
+    unittest.main()
