@@ -11,11 +11,11 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ init method """
-        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -87,7 +87,7 @@ class Rectangle(Base):
     def __str__(self):
         """ str method """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                self.__x, self.__y, self.__width, self.__height))
+                self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
         """ update method """
