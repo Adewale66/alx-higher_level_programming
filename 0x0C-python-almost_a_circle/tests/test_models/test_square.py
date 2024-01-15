@@ -8,8 +8,11 @@ class SquareTest(unittest.TestCase):
     def test_doc(self):
         """Test documentation"""
         self.assertIsNotNone(Square.__doc__)
-        self.assertGreater(len(Square.__doc__), 1)
         self.assertIsNotNone(Square.__init__.__doc__)
+
+    def test_doc_length(self):
+        """ Doc length """
+        self.assertGreater(len(Square.__doc__), 1)
         self.assertGreater(len(Square.__init__.__doc__), 1)
 
     def test_square_instance(self):
