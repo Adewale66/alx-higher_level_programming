@@ -24,7 +24,7 @@ class TestMaxInteger(unittest.TestCase):
             self : Argument
 
         """
-        self.assertEqual(max_integer([5]), 5)
+        self.assertEqual(max_integer([5]), 8)
 
     def test_2_elements(self):
         """
