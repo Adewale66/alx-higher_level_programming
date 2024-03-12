@@ -8,4 +8,4 @@ function logMe (item) {
   this.count++;
 }
 
-module.logMe = logMe;
+exports.logMe = logMe;
