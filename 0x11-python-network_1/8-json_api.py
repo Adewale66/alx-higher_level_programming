@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Takes a letter and sends a POST request to a URL with the letter as a parameter"""
+"""Takes a letter and sends a POST request with the letter as a param"""
+
 
 if __name__ == "__main__":
     import requests
     from sys import argv
-    
+
     if len(argv) == 2:
         q = argv[1]
     else:
@@ -17,5 +18,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(json["id"], json["name"]))
         else:
             print("No result")
-    except:
+    except Exception:
         print("Not a valid JSON")
