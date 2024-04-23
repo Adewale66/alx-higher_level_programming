@@ -20,7 +20,7 @@ request('https://swapi-api.alx-tools.com/api/films/' + process.argv[2], function
           } else {
             const name = JSON.parse(bodyReturned).name;
             characterNames[parseInt(link)] = name.toString();
-            resolve();
+            resolve(name);
           }
         });
       });
@@ -29,11 +29,10 @@ request('https://swapi-api.alx-tools.com/api/films/' + process.argv[2], function
 
     Promise.all(promises)
       .then(() => {
-        console.log(characterNames);
         characterNames.forEach(e => console.log(e));
       })
       .catch(err => {
-        console.error('Error:', err);
+        console.error(err);
       });
   }
 });
